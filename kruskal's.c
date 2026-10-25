@@ -21,7 +21,7 @@ void unionn(int k,int l)
 {
     int ROOTu=find(k);
     int ROOTv=find(l);
-    parent[ROOTv]=k;
+    parent[ROOTv]=ROOTu;
 }
 
 
