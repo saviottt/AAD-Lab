@@ -9,17 +9,17 @@ void swap(int *a, int *b) {
 
 // Partition: places pivot at its correct position, returns that index
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high];   // choose last element as pivot
-    int i = low - 1;         // end of the "smaller" region
+    int pivot = arr[high];
+    int i = low;                       // wall
 
     for (int j = low; j < high; j++) {
         if (arr[j] < pivot) {
-            i++;
             swap(&arr[i], &arr[j]);
+            i++;
         }
     }
-    swap(&arr[i + 1], &arr[high]);  // put pivot in its place
-    return i + 1;
+    swap(&arr[i], &arr[high]);         // pivot to its place
+    return i;
 }
 
 // Quick Sort recursive function
